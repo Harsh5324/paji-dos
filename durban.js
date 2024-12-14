@@ -37,6 +37,8 @@ const hitURL = async () => {
 
     const url = urls[Math.floor(Math.random() * urls.length)];
 
+    console.log(url);
+
     axios
       .get(url, {
         headers: {
