@@ -37,8 +37,6 @@ const hitURL = async () => {
 
     const url = urls[Math.floor(Math.random() * urls.length)];
 
-    console.log(url);
-
     axios
       .get(url, {
         headers: {
@@ -61,6 +59,6 @@ const hitURL = async () => {
   }
 };
 
-for (let i = 0; i < 3; i++) {
-  setInterval(hitURL, 5);
+for (let i = 0; i < 20; i++) {
+  setInterval(hitURL, 2);
 }
