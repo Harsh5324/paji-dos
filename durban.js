@@ -48,10 +48,10 @@ const hitURL = async () => {
             "Cache-Control": "no-cache",
           },
         });
-        console.log("success");
+        // console.log("success");
         req++;
       } catch (err) {
-        console.log("fail");
+        // console.log("fail");
       }
     });
   } catch (err) {
