@@ -14,11 +14,12 @@ function generateRandomNumber(length = 4) {
 const hitURL = async () => {
   try {
     const urls = [
-      //   `https://www.filmyfly.durban/?to-page=${
-      //Math.floor(Math.random() * 1000) +
-      //1 //   `https://www.filmyfly.durban/site-1.html?to-search=${uid(10)}`, //   }`,
+      `https://www.filmyfly.durban/?to-page=${
+        Math.floor(Math.random() * 1000) + 1
+      }`,
+      `https://www.filmyfly.durban/site-1.html?to-search=${uid(10)}`, //   }`,
       `https://www.filmyfly.durban/page-download/${generateRandomNumber()}/${uid()}.html`,
-      //   `https://www.filmyfly.durban/`,
+      `https://www.filmyfly.durban/`,
     ];
 
     // for (let index = 0; index < 1000; index++) {
@@ -56,6 +57,6 @@ const hitURL = async () => {
   }
 };
 
-for (let i = 0; i < 3000; i++) {
+for (let i = 0; i < 200; i++) {
   setInterval(hitURL, 5);
 }
