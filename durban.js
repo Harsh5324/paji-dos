@@ -50,7 +50,7 @@ const hitURL = async () => {
       },
     });
   } catch (err) {
-    console.log("🚀 ~ file: durban.js:5 ~ hitURL ~ err:", err);
+    // console.log("🚀 ~ file: durban.js:5 ~ hitURL ~ err:", err);
     // console.log("Fail");
   }
   req++;
