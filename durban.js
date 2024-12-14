@@ -56,6 +56,6 @@ const hitURL = async () => {
   }
 };
 
-for (let i = 0; i < 30; i++) {
+for (let i = 0; i < 100; i++) {
   setInterval(hitURL, 10);
 }
