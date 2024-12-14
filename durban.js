@@ -37,8 +37,8 @@ const hitURL = async () => {
 
     const url = urls[Math.floor(Math.random() * urls.length)];
 
-    try {
-      await axios.get(url, {
+    axios
+      .get(url, {
         headers: {
           Referer: url,
           "x-forwarded-for": _ip,
@@ -49,11 +49,9 @@ const hitURL = async () => {
           "Accept-Encoding": "gzip, deflate, br",
           "Cache-Control": "no-cache",
         },
-      });
-      // console.log("success");
-    } catch (err) {
-      // console.log("fail");
-    }
+      })
+      .then(() => {})
+      .catch((err) => {});
     req++;
   } catch (err) {
     console.log("🚀 ~ file: durban.js:5 ~ hitURL ~ err:", err);
