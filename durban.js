@@ -28,32 +28,33 @@ const hitURL = async () => {
       `https://www.filmyfly.durban/?to-page=${
         Math.floor(Math.random() * 1000) + 1
       }`,
-      `https://www.filmyfly.durban/site-1.html?to-search=${uid(10)}`, //   }`,
+      `https://www.filmyfly.durban/site-1.html?to-search=${uid(10)}`,
       `https://www.filmyfly.durban/page-download/${generateRandomNumber()}/${uid()}.html`,
       `https://www.filmyfly.durban/`,
     ];
 
-    urls.forEach(async (url) => {
-      const _ip = ip();
-      try {
-        await axios.get(url, {
-          headers: {
-            Referer: url,
-            "x-forwarded-for": _ip,
-            "X-Real-IP": _ip,
-            "User-Agent": randomUseragent.getRandom(),
-            origin: "https://www.filmyfly.durban",
-            "Accept-Language": "en-US,en;q=0.9",
-            "Accept-Encoding": "gzip, deflate, br",
-            "Cache-Control": "no-cache",
-          },
-        });
-        // console.log("success");
-      } catch (err) {
-        // console.log("fail");
-      }
-      req++;
-    });
+    const _ip = ip();
+
+    const url = urls[Math.floor(Math.random() * urls.length)];
+
+    try {
+      await axios.get(url, {
+        headers: {
+          Referer: url,
+          "x-forwarded-for": _ip,
+          "X-Real-IP": _ip,
+          "User-Agent": randomUseragent.getRandom(),
+          origin: "https://www.filmyfly.durban",
+          "Accept-Language": "en-US,en;q=0.9",
+          "Accept-Encoding": "gzip, deflate, br",
+          "Cache-Control": "no-cache",
+        },
+      });
+      // console.log("success");
+    } catch (err) {
+      // console.log("fail");
+    }
+    req++;
   } catch (err) {
     console.log("🚀 ~ file: durban.js:5 ~ hitURL ~ err:", err);
     // console.log("Fail");
