@@ -17,7 +17,7 @@ let time = 0;
 const checkSpeed = () => {
   time++;
   const curSpeed = `${Math.round(req / time)} req per second`;
-  console.log("Cuurent speed: " + curSpeed);
+  console.log("Speed: " + curSpeed);
 };
 
 setInterval(checkSpeed, 1000);
