@@ -25,12 +25,12 @@ setInterval(checkSpeed, 1000);
 const hitURL = async () => {
   try {
     const urls = [
-      `https://www.filmyfly.durban/?to-page=${
-        Math.floor(Math.random() * 1000) + 1
-      }`,
+      //   `https://www.filmyfly.durban/?to-page=${
+      //     Math.floor(Math.random() * 1000) + 1
+      //   }`,
       `https://www.filmyfly.durban/site-1.html?to-search=${uid(10)}`,
       `https://www.filmyfly.durban/page-download/${generateRandomNumber()}/${uid()}.html`,
-      `https://www.filmyfly.durban/`,
+      //   `https://www.filmyfly.durban/`,
     ];
 
     const _ip = ip();
@@ -59,6 +59,6 @@ const hitURL = async () => {
   }
 };
 
-for (let i = 0; i < 10; i++) {
-  setInterval(hitURL, 5);
-}
+// for (let i = 0; i < 5; i++) {
+setInterval(hitURL, 5);
+// }
