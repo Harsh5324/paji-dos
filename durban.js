@@ -28,7 +28,7 @@ const hitURL = async () => {
       //   `https://www.filmyfly.durban/?to-page=${
       //     Math.floor(Math.random() * 1000) + 1
       //   }`,
-      `https://www.filmyfly.durban/site-1.html?to-search=${uid(10)}`,
+      `https://www.filmyfly.durban/site-1.html?to-search=${uid(1)}`,
       `https://www.filmyfly.durban/page-download/${generateRandomNumber()}/${uid()}.html`,
       //   `https://www.filmyfly.durban/`,
     ];
