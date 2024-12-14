@@ -37,26 +37,23 @@ const hitURL = async () => {
 
     const url = urls[Math.floor(Math.random() * urls.length)];
 
-    axios
-      .get(url, {
-        headers: {
-          Referer: url,
-          "x-forwarded-for": _ip,
-          "X-Real-IP": _ip,
-          "User-Agent": randomUseragent.getRandom(),
-          origin: "https://www.filmyfly.durban",
-          "Accept-Language": "en-US,en;q=0.9",
-          "Accept-Encoding": "gzip, deflate, br",
-          "Cache-Control": "no-cache",
-        },
-      })
-      .then(() => {})
-      .catch((err) => {});
-    req++;
+    await axios.get(url, {
+      headers: {
+        Referer: url,
+        "x-forwarded-for": _ip,
+        "X-Real-IP": _ip,
+        "User-Agent": randomUseragent.getRandom(),
+        origin: "https://www.filmyfly.durban",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Cache-Control": "no-cache",
+      },
+    });
   } catch (err) {
     console.log("🚀 ~ file: durban.js:5 ~ hitURL ~ err:", err);
     // console.log("Fail");
   }
+  req++;
 };
 
 for (let i = 0; i < 20; i++) {
